@@ -23,6 +23,9 @@ function createGrid(num, opacity) {
 }   
 
 const boxContainer = document.querySelector(".box-square");
+const createButton = document.querySelector(".create-button");
+const boxInput = document.querySelector(".box-input");
+const opacityInput = document.querySelector(".opacity-input");
 
 //set box continer width to its height
 let height = boxContainer.parentNode.clientHeight;
@@ -31,6 +34,8 @@ boxContainer.style.height = Math.min(height, width) + 'px';
 boxContainer.style.width = Math.min(height, width) + 'px';
 
 //create base grid
+boxInput.value = "16";
+opacityInput.value = "1";
 createGrid(16, 1);
 
 //on button click, re-generate grid
@@ -55,9 +60,4 @@ function generateNewGrid(num, opacity){
     }
 }
 
-const createButton = document.querySelector(".create-button");
-const boxInput = document.querySelector(".box-input");
-const opacityInput = document.querySelector(".opacity-input");
 createButton.addEventListener("click", () => generateNewGrid(+boxInput.value, +opacityInput.value));
-boxInput.value = '';
-opacityInput.value = '';
