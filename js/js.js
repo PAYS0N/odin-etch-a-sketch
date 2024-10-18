@@ -1,0 +1,1 @@
+//set box continer width to its height

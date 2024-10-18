@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.header {
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    background-color: #1f2937;
+    color: #e5e7eb;
+}
+
+.title {
+    font-size: 24px;
+}
+
+.input-header {
+    display: flex;
+    gap: 8px;
+}
+
+.box-input {
+    background-color: #e5e7eb   ;
+}
+
+.create-button{
+    background-color: #1f2937;
+    color: #e5e7eb;
+}
+
+.page {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+
+    background-color: rgb(181, 181, 181);
+}
+
+.box-square {
+    flex: none;
+    align-items: stretch;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #1f2937;
+    color: white;
+
+    padding: 36px 150px;
+}
