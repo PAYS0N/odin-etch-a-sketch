@@ -52,8 +52,16 @@ body {
 }
 
 .box-square {
-    flex: none;
-    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    background-color: white;
 }
 
 .footer {
