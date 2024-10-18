@@ -33,8 +33,9 @@ body {
     gap: 8px;
 }
 
-.box-input {
-    background-color: #e5e7eb   ;
+.box-input
+, .opacity-input {
+    background-color: rgb(181, 181, 181);
 }
 
 .create-button{

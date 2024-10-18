@@ -1,4 +1,4 @@
-function createGrid(num) {
+function createGrid(num, opacity) {
     let row;
     let cell;
     let cellSideLength = boxContainer.clientHeight/num;
@@ -14,7 +14,7 @@ function createGrid(num) {
             cell.style.opacity = 0;
             cell.style.backgroundColor = "black";
             cell.addEventListener("mouseenter", () => {
-                event.target.style.opacity = +event.target.style.opacity + .1;
+                event.target.style.opacity = +event.target.style.opacity + 1/opacity;
             })                        
             row.appendChild(cell);
         }
@@ -31,7 +31,7 @@ boxContainer.style.height = Math.min(height, width) + 'px';
 boxContainer.style.width = Math.min(height, width) + 'px';
 
 //create base grid
-createGrid(16);
+createGrid(16, 1);
 
 //on button click, re-generate grid
 function removeGrid() {
@@ -42,17 +42,22 @@ function removeGrid() {
     })
 }
 
-function generateNewGrid(num){
-    if (typeof num === 'number' & num > 0 & num < 100){
-        removeGrid();
-        createGrid(num);
+function generateNewGrid(num, opacity){
+    if (opacity <= 0) {
+        alert("Error with opacity, please enter a number greater than 0")        
+    }
+    if (num < 0 | num >= 100){
+        alert("Error with number of cells, please enter a number between 0 and 100")
     }
     else {
-        alert("Error with value, please enter a number between 0 and 100")
+        removeGrid();
+        createGrid(num, opacity);
     }
 }
 
 const createButton = document.querySelector(".create-button");
-const input = document.querySelector(".box-input");
-createButton.addEventListener("click", () => generateNewGrid(+input.value));
-input.value = '';
+const boxInput = document.querySelector(".box-input");
+const opacityInput = document.querySelector(".opacity-input");
+createButton.addEventListener("click", () => generateNewGrid(+boxInput.value, +opacityInput.value));
+boxInput.value = '';
+opacityInput.value = '';
