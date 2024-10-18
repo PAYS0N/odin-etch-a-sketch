@@ -54,6 +54,7 @@ body {
 .box-square {
     display: flex;
     flex-direction: column;
+    background-color: white;
 }
 
 .row {

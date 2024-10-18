@@ -11,8 +11,10 @@ function createGrid(num) {
             cell.setAttribute("class", "cell");
             cell.style.height = cellSideLength + 'px';
             cell.style.width = cellSideLength + 'px';
+            cell.style.opacity = 0;
+            cell.style.backgroundColor = "black";
             cell.addEventListener("mouseenter", () => {
-                event.target.style.backgroundColor = "black";
+                event.target.style.opacity = +event.target.style.opacity + .1;
             })                        
             row.appendChild(cell);
         }
