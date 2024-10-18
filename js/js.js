@@ -43,10 +43,10 @@ function removeGrid() {
 }
 
 function generateNewGrid(num, opacity){
-    if (opacity <= 0) {
+    if (opacity <= 0 | isNaN(opacity)) {
         alert("Error with opacity, please enter a number greater than 0")        
     }
-    if (num < 0 | num >= 100){
+    else if (num < 0 | num >= 100 | isNaN(num)){
         alert("Error with number of cells, please enter a number between 0 and 100")
     }
     else {
