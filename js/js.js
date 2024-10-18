@@ -10,12 +10,15 @@ function createGrid(num) {
             cell = document.createElement("div");
             cell.setAttribute("class", "cell");
             cell.style.height = cellSideLength + 'px';
-            cell.style.width = cellSideLength + 'px';                        
+            cell.style.width = cellSideLength + 'px';
+            cell.addEventListener("mouseenter", () => {
+                event.target.style.backgroundColor = "black";
+            })                        
             row.appendChild(cell);
         }
         boxContainer.appendChild(row);
     }
-}
+}   
 
 //set box continer width to its height
 const boxContainer = document.querySelector(".box-square");
